@@ -1,0 +1,167 @@
+/* Global Styling here */
+* {
+  padding: 0;
+  margin: 0;
+  outline-offset: 0 !important;
+  outline-color: #a1e6d5;
+
+  /* TODO: Remove this when we remove chakra */
+  --chakra-shadows-outline: 0 0 0 3px rgb(161, 230, 213);
+}
+
+html,
+body {
+  min-height: 100% !important;
+  height: 100%;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: #b2e9db;
+}
+
+::selection {
+  background: #b2e9db;
+}
+
+input[aria-invalid='true'] {
+  border-color: #e53e3e;
+  outline-color: #e53e3e !important;
+}
+
+@font-face {
+  src: url('/fonts/AUTHENTICSans/AUTHENTICSans-90.otf') format('opentype');
+  font-family: 'AUTHENTIC Sans';
+  font-weight: normal;
+}
+@font-face {
+  src: url('/fonts/AUTHENTICSans/AUTHENTICSans-130.otf') format('opentype');
+  font-family: 'AUTHENTIC Sans';
+  font-weight: 600;
+}
+@font-face {
+  src: url('/fonts/AUTHENTICSans/AUTHENTICSans-150.otf') format('opentype');
+  font-family: 'AUTHENTIC Sans';
+  font-weight: bold;
+}
+
+@font-face {
+  src: url('/fonts/NBArchitektNeue/NBArchitektNeueRegular.otf') format('opentype');
+  font-family: 'NB Architekt Neue';
+  font-weight: normal;
+}
+
+@font-face {
+  src: url('/fonts/DrukWide/DrukWideMedium.otf') format('opentype');
+  font-family: 'Druk Wide Cy';
+  font-weight: normal;
+}
+
+/* misc utils */
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ELLIPSIS ANIMATION */
+/** the following code is from https://codepen.io/thetallweeks/pen/yybGra **/
+.loading-ellipsis:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: '\2026'; /* ascii code for the ellipsis character */
+  width: 0px;
+  margin-right: 1.25em;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+    margin-right: 0;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+    margin-right: 0;
+  }
+}
+
+/* CHAKRA OVERRIDES - ie: stuff that we can't do with extendTheme() */
+
+.chakra-alert a {
+  text-decoration: underline;
+}
+
+#chakra-toast-manager-bottom {
+  margin-bottom: 3vh !important;
+}
+
+.chakra-form-control.displayOnly label {
+  opacity: 1 !important;
+}
+
+/* Tippy Overrides */
+.tippy-box {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-width: 320px;
+  transition: 0.15s ease all !important;
+}
+
+@media (min-width: 768px) {
+  .tippy-box {
+    min-width: 500px;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-none-opa {
+  opacity: 0;
+}
+
+.web3modal-provider-container {
+  padding: 20px 48px !important;
+}
+
+.web3modal-modal-lightbox {
+  z-index: 9999999 !important;
+}
+
+.web3modal-modal-card {
+  padding-bottom: 0px !important;
+}
+
+.web3modal-modal-providers-container {
+  padding-top: 2rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.-walletlink-extension-dialog-box-bottom-description {
+  margin-top: 28px !important;
+}
+
+@media screen and (min-width: 48em) {
+  .web3modal-modal-providers-container {
+    padding-inline-start: 1.5rem !important;
+    padding-inline-end: 1.5rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .web3modal-modal-providers-container {
+    padding-bottom: 0.2rem !important;
+  }
+}

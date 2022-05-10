@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "CommonJS",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "incremental": true,
+    "allowJs": false,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@context/*": ["./context/*"],
+      "@utils/*": ["./utils/*"],
+      "@generated-graphql": ["./generated/graphql"],
+      "@generated-gql": ["./generated/gql/graphql"],
+      "@generated-gql-fragment": ["./generated/gql/fragment-masking"],
+      "@graphql/*": ["./graphql/*", "./gql-clients/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@stitches-config": ["./stitches.config.ts"],
+      "*": ["./WRONG_PATH"]
+    },
+    "noUncheckedIndexedAccess": true,
+    "noErrorTruncation": true,
+    "importsNotUsedAsValues": "error"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "../../env.d.ts"],
+  "exclude": [".next", "typechain"]
+}

@@ -1,0 +1,21 @@
+overwrites: true
+schema: '../gateway/schema.graphql'
+documents:
+  - './(components|pages|context|hooks|store|utils)/**/*.ts(x)?'
+generates:
+  ./generated/gql:
+    preset: gql-tag-operations-preset
+    presetConfig:
+      augmentedModuleName: '@apollo/client'
+      fragmentMasking: true
+    config:
+      useTypeImports: true
+      enumsAsConst: true
+      dedupeFragments: true
+      scalars:
+        DateTime: 'string'
+        NonNegativeInt: 'number'
+        JSON: 'unknown'
+        Timestamp: 'number'
+        Void: 'null'
+        UUID: 'string'
